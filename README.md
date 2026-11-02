@@ -48,17 +48,17 @@ Bank details, GST/tax compliance, payment status, currency conversion, PO matchi
 ## Known limitations
 - Duplicate detection matches vendor + invoice number as text. Different spellings of the same vendor (“Pte. Ltd.” vs “Pte Ltd”) won’t match.
 - Date checks use `TODAY()`, so a status can change when the sheet is reopened later.
-- `sheets/Invoice_Validation.xlsx` is a snapshot exported from Google Sheets. Google‑only formulas appear as `__xludf.DUMMYFUNCTION` in Excel. View the live logic here: [[view‑only Google Sheet link](https://docs.google.com/spreadsheets/d/1T-AICuF9Pulj-H9npvPvo-TOh-N2gkdqWczKs50oY4w/edit?usp=sharing)].
+- `sheets/Invoice Intake & Validation.xlsx` is a snapshot exported from Google Sheets. Google‑only formulas appear as `__xludf.DUMMYFUNCTION` in Excel. View the live logic here: [[view‑only Google Sheet link](https://docs.google.com/spreadsheets/d/1T-AICuF9Pulj-H9npvPvo-TOh-N2gkdqWczKs50oY4w/edit?usp=sharing)].
 
 ## Repo contents
 - `make/scenario-blueprint.json`: import into Make (Create scenario → ⋯ → Import Blueprint), then reconnect your own Google and Gemini accounts.
 - `prompts/gemini_extraction_prompt.txt`: the extraction prompt. `{{1.name}}` and `{{1.id}}` are Make variables.
-- `sheets/Invoice_Validation.xlsx`: output snapshot with all four tabs.
+- `sheets/Invoice Intake & Validation.xlsx`: output snapshot with all four tabs.
 - `sample_invoices/`: the 25 test PDFs.
 
 ## Tech stack
 Automation: Make  
-AI extraction: Google Gemini API (Gemini 3.5 Flash)  
+AI extraction: Google Gemini API (Gemini 3.5 Flash Lite)  
 Input: Google Drive  
 Output & validation: Google Sheets (ARRAYFORMULA, MAP, BYROW, LAMBDA, FILTER, XLOOKUP)  
 Data format: JSON
