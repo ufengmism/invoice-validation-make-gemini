@@ -1,5 +1,5 @@
 {
-    "name": "Project 2 AI",
+    "name": "Invoice Intake & Validation (Drive → Gemini → Sheets)",
     "flow": [
         {
             "id": 1,
