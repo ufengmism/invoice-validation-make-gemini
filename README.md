@@ -48,12 +48,12 @@ Bank details, GST/tax compliance, payment status, currency conversion, PO matchi
 ## Known limitations
 - Duplicate detection matches vendor + invoice number as text. Different spellings of the same vendor (“Pte. Ltd.” vs “Pte Ltd”) won’t match.
 - Date checks use `TODAY()`, so a status can change when the sheet is reopened later.
-- `PROJECT_2_INVOICES.xlsx` is a snapshot exported from Google Sheets. Google‑only formulas appear as `__xludf.DUMMYFUNCTION` in Excel. View the live logic here: [view‑only Google Sheet link].
+- `sheets/Invoice_Validation.xlsx` is a snapshot exported from Google Sheets. Google‑only formulas appear as `__xludf.DUMMYFUNCTION` in Excel. View the live logic here: [view‑only Google Sheet link].
 
 ## Repo contents
 - `make/scenario-blueprint.json`: import into Make (Create scenario → ⋯ → Import Blueprint), then reconnect your own Google and Gemini accounts.
 - `prompts/gemini_extraction_prompt.txt`: the extraction prompt. `{{1.name}}` and `{{1.id}}` are Make variables.
-- `sheets/PROJECT_2_INVOICES.xlsx`: output snapshot with all four tabs.
+- `sheets/Invoice_Validation.xlsx`: output snapshot with all four tabs.
 - `sample_invoices/`: the 25 test PDFs.
 
 ## Tech stack
